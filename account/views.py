@@ -11,7 +11,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 # 용어들(변경필요)
-# 첫 화면 : HOME
+# 첫 화면 : chat
 
 
 # 사용자 가입
@@ -25,7 +25,7 @@ def create(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect(reverse("HOME"))
+            return redirect(reverse("chat"))
         else:
             return render(request, "account/create.html", {"form": form})
 
@@ -44,7 +44,7 @@ def login(request):
             if request.GET.get("next"):
                 return redirect(request.GET.get("next"))
             else:
-                return redirect(reverse("HOME"))
+                return redirect(reverse("chat"))
         else:
             return render(
                 request,
@@ -60,7 +60,7 @@ def login(request):
 @login_required
 def logout(request):
     logout(request)
-    return redirect(reverse("HOME"))
+    return redirect(reverse("chat"))
 
 
 # 사용자 정보 조회
@@ -113,4 +113,4 @@ def update(request):
 def delete(request):
     request.user.delete()
     logout(request)
-    return redirect(reverse("HOME"))
+    return redirect(reverse("chat"))
