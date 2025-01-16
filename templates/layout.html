@@ -14,20 +14,23 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <title>{% block title %}청년정책 챗봇{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-header">
-     <a href="#" class="navbar-brand">프로젝트명</a>
-    </div>
+  <nav class="navbar navbar-expand-sm mt-3">
     <div class="container">
-      {% if user.is_authenticated %}
-      로그인 O 프로필 이미지 이름 님 환영합니다
-      <a href="{% url "account:logout" %}" class="nav-link">로그아웃</a>
-      {% else %}
-      <a href="{%url "account:login"%}" class="nav-link">로그인</a>
-      {% endif %}
+      <div class="navbar-header">
+      <a href="#" class="navbar-brand">청년정책 알려줘!</a>
+      </div>
+      <div class="navbar-nav">
+        {% if user.is_authenticated %}
+        <a href="{% url "account:detail" %}" class="nav-link"><img src={{user.profile_img.url}} width="30px" height="30px" class="rounded-circle"></a>
+        <a href="{% url "account:detail" %}" class="nav-link">{{user.name}}님 환영합니다</a>
+        <a href="{% url "account:logout" %}" class="nav-link">로그아웃</a>
+        {% else %}
+        <a href="{%url "account:login"%}" class="nav-link">로그인</a>
+        {% endif %}
+      </div>
     </div>
   </nav>
   <div class="container">
