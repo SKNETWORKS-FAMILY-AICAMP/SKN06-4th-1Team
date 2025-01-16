@@ -31,7 +31,6 @@ def create(request):
 
 
 # 사용자 로그인
-@login_required
 def login(request):
     if request.method == "GET":
         return render(request, "account/login.html", {"form": AuthenticationForm()})

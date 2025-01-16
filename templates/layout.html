@@ -17,14 +17,16 @@
     <title>{% block title %}청년정책 챗봇{% endblock title %}</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm">
+  <nav class="navbar">
     <div class="navbar-header">
      <a href="#" class="navbar-brand">프로젝트명</a>
     </div>
-
     <div class="container">
-    로그인 X 로그인
-    로그인 O 프로필 이미지 이름 님 환영합니다
+      {% if user.is_authenticated %}
+      로그인 O 프로필 이미지 이름 님 환영합니다
+      {% else %}
+      <a href="{%url "account:login"%}" class="nav-link">로그인</a>
+      {% endif %}
     </div>
   </nav>
   <div class="container">
