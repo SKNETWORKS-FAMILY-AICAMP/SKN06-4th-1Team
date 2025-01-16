@@ -127,3 +127,13 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 사용자 정의 User 모델 등록
+AUTH_USER_MODEL = "account.User"
+
+# 로그인 안한 사용자가 로그인 해야 실행할 수 있는 View를 호출했을 때 이동할 url 설정
+LOGIN_URL = "/account/login"
+
+# 로그인/로그아웃 처리 후에 이동할 url - Class 기반 View를 사용할 떄 필요
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

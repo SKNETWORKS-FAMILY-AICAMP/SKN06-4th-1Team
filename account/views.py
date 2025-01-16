@@ -66,8 +66,8 @@ def logout(request):
 # 사용자 정보 조회
 @login_required
 def detail(request):
-    user = User.objects.get(pk=request.user.pk)
-    return render(request, "account/detail.html", {"user": user})
+    object = User.objects.get(pk=request.user.pk)
+    return render(request, "account/detail.html", {"user": object})
 
 
 # 사용자 비밀번호 변경
@@ -95,12 +95,12 @@ def pwd_change(request):
 @login_required
 def update(request):
     if request.method == "GET":
-        user = User.objects.get(pk=request.user.pk)
-        form = CustomUserChangeForm(instance=user)
+        object = User.objects.get(pk=request.user.pk)
+        form = CustomUserChangeForm(instance=object)
         return render(request, "account/update.html", {"form": form})
     elif request.method == "POST":
-        user = User.objects.get(pk=request.user.pk)
-        form = CustomUserChangeForm(request.POST, request.FILES, instance=user)
+        object = User.objects.get(pk=request.user.pk)
+        form = CustomUserChangeForm(request.POST, request.FILES, instance=object)
         if form.is_valid():
             form.save()
             return redirect(reverse("account:detail"))
