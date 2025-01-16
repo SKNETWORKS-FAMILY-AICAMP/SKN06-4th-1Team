@@ -20,7 +20,7 @@
   <nav class="navbar navbar-expand-sm mt-3">
     <div class="container">
       <div class="navbar-header">
-      <a href="#" class="navbar-brand">청년정책 알려줘!</a>
+      <a href="{% url "chat" %}" class="navbar-brand">청년정책 알려줘!</a>
       </div>
       <div class="navbar-nav">
         {% if user.is_authenticated %}
