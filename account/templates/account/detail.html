@@ -1,6 +1,43 @@
 {% extends "layout.html" %}
 {% load django_bootstrap5 %}
-{% block title %}{% endblock title %}
+{% block title %}정보 조회{% endblock title %}
 {% block contents %}
-
+<table class="table">
+    <tr>
+        <th>
+            사진
+        </th>
+        <td>
+            {% if user.profile_img %}
+                <a href="{{user.profile_img.url}}" target="_blank"><img src="{{user.profile_img.url}}" width="150px"></a>
+            {% else %}
+                <a href="#" target="_blank"><img src="" width="150px" alt="동숲 주민 사진"></a>
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            이름
+        </th>
+        <td>
+            {{user.name}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            지역
+        </th>
+        <td>
+            {{user.state}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            생년월일
+        </th>
+        <td>
+            {{user.birthday}}
+        </td>
+    </tr>
+</table>
 {% endblock contents %}
