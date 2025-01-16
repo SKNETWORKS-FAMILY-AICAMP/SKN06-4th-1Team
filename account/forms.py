@@ -9,8 +9,15 @@ from django.contrib.auth.forms import (
 from .models import User
 from datetime import datetime
 
-# 사용자 등록 폼폼
+# 사용자 등록 폼 
 class CustomUserCreationForm(UserCreationForm):
+    STATE_CHOICE = [
+        '서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시', '울산광역시',
+        '세종특별자치시', '경기도', '강원도', '충청북도', '충청남도', '전라북도', '전라남도', '경상북도', '경상남도'
+    ]
+
+    state = forms.ChoiceField(choices=STATE_CHOICE, widget=forms.Select, label='State')
+
     class Meta: 
         model = User
         # form field에 명시할 항목
@@ -21,7 +28,7 @@ class CustomUserCreationForm(UserCreationForm):
             'birthday':forms.DateInput(attrs={'type':'date'}),
         }
 
-    # 이름이 올바르게 입력되었는지 확인 (2자 이상상)
+    # 이름이 올바르게 입력되었는지 확인 (2자 이상)
     def clean_name(self):
         name = self.cleaned_data['name']
         if len(name) < 2:
@@ -37,7 +44,7 @@ class CustomUserCreationForm(UserCreationForm):
         return birthday 
     
 
-# 사용자 정보 수정 폼폼
+# 사용자 정보 수정 폼 
 class CustomUserChangeForm(UserChangeForm):
     password = None # password 변경링크 미표기
 
@@ -49,7 +56,7 @@ class CustomUserChangeForm(UserChangeForm):
             'birthday':forms.DateInput(attrs={'type':'date'}),
         }
 
-    # 이름이 올바르게 입력되었는지 확인 (2자 이상상)
+    # 이름이 올바르게 입력되었는지 확인 (2자 이상)
     def clean_name(self):
         name = self.cleaned_data['name']
         if len(name) < 2:
