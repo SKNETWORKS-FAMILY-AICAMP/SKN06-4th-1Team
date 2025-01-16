@@ -24,6 +24,7 @@
     <div class="container">
       {% if user.is_authenticated %}
       로그인 O 프로필 이미지 이름 님 환영합니다
+      <a href="{% url "account:logout" %}" class="nav-link">로그아웃</a>
       {% else %}
       <a href="{%url "account:login"%}" class="nav-link">로그인</a>
       {% endif %}

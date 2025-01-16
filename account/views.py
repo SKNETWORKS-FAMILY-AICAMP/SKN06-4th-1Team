@@ -10,12 +10,8 @@ from .models import User
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
-# 용어들(변경필요)
-# 첫 화면 : chat
-
-
 # 사용자 가입
-def create(request):
+def user_create(request):
     if request.method == "GET":
         return render(
             request, "account/create.html", {"form": CustomUserCreationForm()}
@@ -31,7 +27,7 @@ def create(request):
 
 
 # 사용자 로그인
-def login(request):
+def user_login(request):
     if request.method == "GET":
         return render(request, "account/login.html", {"form": AuthenticationForm()})
     elif request.method == "POST":
@@ -57,14 +53,15 @@ def login(request):
 
 # 사용자 로그아웃
 @login_required
-def logout(request):
+def user_logout(request):
+    print("logout")
     logout(request)
     return redirect(reverse("chat"))
 
 
 # 사용자 정보 조회
 @login_required
-def detail(request):
+def user_detail(request):
     object = User.objects.get(pk=request.user.pk)
     return render(request, "account/detail.html", {"user": object})
 
@@ -92,7 +89,7 @@ def pwd_change(request):
 
 # 사용자 정보 수정
 @login_required
-def update(request):
+def user_update(request):
     if request.method == "GET":
         object = User.objects.get(pk=request.user.pk)
         form = CustomUserChangeForm(instance=object)
@@ -109,7 +106,7 @@ def update(request):
 
 # 사용자 탈퇴
 @login_required
-def delete(request):
+def user_delete(request):
     request.user.delete()
     logout(request)
     return redirect(reverse("chat"))
