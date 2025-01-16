@@ -17,14 +17,20 @@
     <title>{% block title %}청년정책 챗봇{% endblock title %}</title>
 </head>
 <body>
-    layout_chat
-    프로젝트명
+  <nav class="navbar navbar-expand-sm">
+    <div class="navbar-header">
+     <a href="#" class="navbar-brand">프로젝트명</a>
+    </div>
+
+    <div class="container">
     로그인 X 로그인
     로그인 O 프로필 이미지 이름 님 환영합니다
-    <div class="container">
+    </div>
+  </nav>
+  <div class="container">
     {% block contents %}
     
     {% endblock contents %}
-    </div>
+  </div>
 </body>
 </html>
