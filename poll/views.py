@@ -23,29 +23,32 @@ def vote_form(request):
 def vote(request):
     # 모든 질문 조회
     questions = Question.objects.all()
-    selected_choices = []
+    selected_choice = []
 
     # 질문별로 선택된 값 확인
     for question in questions:
         choice_key = f"choice_{question.pk}"
         choice_pk = request.POST.get(choice_key)
 
-        # 선택값이 없을 경우 에러 메시지와 함께 폼 반환
-        if not choice_pk:
-            return render(
-                request,
-                "poll/vote_form.html",
-                {
-                    "error_msg": "설문이 완료되지 않았습니다.",
-                    "question_list": questions,
-                },
-            )
-
         # 선택된 choice 저장
-        selected_choices.append(choice_pk)
+        if choice_pk:
+            selected_choice.append(int(choice_pk))
+
+        # 선택값이 없을 경우 에러 메시지와 함께 폼 반환
+    if len(selected_choice) < len(questions):
+        print(selected_choice)
+        return render(
+            request,
+            "poll/vote_form.html",
+            {
+                "error_msg": "설문이 완료되지 않았습니다.",
+                "question_list": questions,
+                "selected_choice": selected_choice,
+            },
+        )
 
     # 선택값 처리
-    for choice_pk in selected_choices:
+    for choice_pk in selected_choice:
         choice = Choice.objects.get(pk=choice_pk)
         choice.votes += 1
         choice.save()
