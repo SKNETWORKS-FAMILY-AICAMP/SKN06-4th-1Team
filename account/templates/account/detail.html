@@ -12,7 +12,7 @@
             {% if user.profile_img %}
                 <a href="{{user.profile_img.url}}" target="_blank"><img src="{{user.profile_img.url}}" width="150px"></a>
             {% else %}
-                <a href="#" target="_blank"><img src="" width="150px" alt="동숲 주민 사진"></a>
+                <a href="#" target="_blank"><img src="/static/account/image/default.jpg" width="150px" alt="동숲 주민 사진"></a>
             {% endif %}
         </td>
     </tr>
@@ -22,6 +22,14 @@
         </th>
         <td>
             {{user.name}}
+        </td>
+    </tr>
+        <tr>
+        <th class="table-info">
+            성별
+        </th>
+        <td>
+            {{user.gender}}
         </td>
     </tr>
     <tr>
