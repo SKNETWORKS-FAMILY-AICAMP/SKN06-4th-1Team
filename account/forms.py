@@ -19,6 +19,10 @@ class CustomUserCreationForm(UserCreationForm):
 
     state = forms.ChoiceField(choices=STATE_CHOICE, widget=forms.Select, label='State')
 
+    GENDER_CHOICE = ['남성', '여성']
+
+    gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.Select, label='Gender')
+
     class Meta: 
         model = User
         # form field에 명시할 항목
@@ -27,6 +31,7 @@ class CustomUserCreationForm(UserCreationForm):
             "password1",
             "password2",
             "name",
+            "gender",
             "state",
             "birthday",
             "profile_img",
@@ -59,7 +64,7 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = User
-        fields = ["name", "state", "birthday", "profile_img"]
+        fields = ["name", 'gender', "state", "birthday", "profile_img"]
 
         widgets = {
             "birthday": forms.DateInput(attrs={"type": "date"}),

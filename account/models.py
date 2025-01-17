@@ -10,6 +10,10 @@ class User(AbstractUser):
         verbose_name="이름",
         max_length=50,  # varcha(50)
     )
+    gender = models.CharField(
+        verbose_name='성별',
+        max_length=50, # varchar(50)
+    )
     state = models.CharField(
         verbose_name="지역",
         max_length=50,  # varchar(50)
