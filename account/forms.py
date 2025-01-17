@@ -31,13 +31,11 @@ class CustomUserCreationForm(UserCreationForm):
         ("경상남도", "경상남도"),
     ]
 
-    state = forms.ChoiceField(choices=STATE_CHOICE, widget=forms.Select, label="State")
+    state = forms.ChoiceField(choices=STATE_CHOICE, widget=forms.Select, label="지역")
 
     GENDER_CHOICE = [("남성", "남성"), ("여성", "여성")]
 
-    gender = forms.ChoiceField(
-        choices=GENDER_CHOICE, widget=forms.Select, label="Gender"
-    )
+    gender = forms.ChoiceField(choices=GENDER_CHOICE, widget=forms.Select, label="성별")
 
     class Meta:
         model = User
