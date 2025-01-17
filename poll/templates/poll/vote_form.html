@@ -5,6 +5,12 @@
 
 {% block contents %}
 <h1>설문폼</h1>
+<!-- 만약에 error_msg가 context data로 넘어온게 있다면 출력 -->
+{% if error_msg != None %}
+    <div style="color:red;font-size:0.8em">
+        {{error_msg}}
+    </div>
+{% endif %}
 
 <form action="{% url 'poll:vote' %}" method="POST" class="mt-3">
     {% csrf_token %}
