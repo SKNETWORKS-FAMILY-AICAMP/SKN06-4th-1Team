@@ -32,9 +32,9 @@
         {% endif %}
 
         {% if user.is_authenticated and user.is_staff %}
-        <a href="" class="nav-link">설문결과</a>
+        <a href="{% url "poll:vote_result" %}" class="nav-link">설문결과</a>
         {% else %}
-        <a href="" class="nav-link">설문조사</a>
+        <a href="{% url "poll:vote_form" %}" class="nav-link">설문조사</a>
         {% endif %}
       </div>
     </div>
