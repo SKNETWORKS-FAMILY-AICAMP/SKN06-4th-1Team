@@ -10,9 +10,9 @@
         </th>
         <td>
             {% if user.profile_img %}
-                <a href="{{user.profile_img.url}}" target="_blank"><img src="{{user.profile_img.url}}" width="150px"></a>
+                <img src="{{user.profile_img.url}}" width="150px">
             {% else %}
-                <a href="#" target="_blank"><img src="/static/account/image/default.jpg" width="150px" alt="동숲 주민 사진"></a>
+                <img src="/static/account/image/default.jpg" width="150px" alt="동숲 주민 사진">
             {% endif %}
         </td>
     </tr>
