@@ -22,17 +22,18 @@ def vote_form(request):
 # 투표가 정상적으로 완료되지 않으면 투표 폼으로 이동
 def vote(request):
     # 모든 질문의 pk를 받아오는 객체
-    question = request.POST.getlist("question")
+    question = Question.objects.all()
     # 1. 각 질문의 choice가 하나라도 비어있을 시 error 메시지와 함께 폼 반환
     # 2. 각 질문의 choice가 전부 채워져있다면 각 질문의 choice의 votes를 1씩 증가
     choices = request.POST.getlist("choice")
+    print(len(question), len(choices))
     if len(choices) < len(question):
         return render(
             request,
             "poll/vote_form.html",
             {
                 "error_msg": "설문이 완료되지 않았습니다.",
-                "question": question,
+                "question_list": question,
             },
         )
     else:
