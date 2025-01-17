@@ -24,8 +24,8 @@ class User(AbstractUser):
     )
     profile_img = models.ImageField(
         verbose_name="프로필 사진",
+        default="images/default.jpg",
         upload_to="images/%Y/%m/%d",  # 저장경로
-        default='/static/account/image/default.jpg',
         blank=True,
     )
 
