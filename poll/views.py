@@ -14,7 +14,7 @@ from poll.models import Question, Choice
 def vote_form(request):
     # question은 전체 질문과 보기를 가지고 있는 객체
     question = Question.objects.all()
-    return render(request, "poll/vote_form.html", {"question": question})
+    return render(request, "poll/vote_form.html", {"question_list": question})
 
 
 # 일반 사용자의 투표 처리
@@ -47,4 +47,4 @@ def vote(request):
 @login_required
 def vote_result(request):
     question = Question.objects.all()
-    return render(request, "poll/vote_result.html", {"question": question})
+    return render(request, "poll/vote_result.html", {"question_list": question})
