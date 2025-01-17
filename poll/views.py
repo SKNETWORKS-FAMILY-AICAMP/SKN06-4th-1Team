@@ -21,27 +21,37 @@ def vote_form(request):
 # 투표를 정상적으로 완료하면 감사 페이지로 이동
 # 투표가 정상적으로 완료되지 않으면 투표 폼으로 이동
 def vote(request):
-    # 모든 질문의 pk를 받아오는 객체
-    question = Question.objects.all()
-    # 1. 각 질문의 choice가 하나라도 비어있을 시 error 메시지와 함께 폼 반환
-    # 2. 각 질문의 choice가 전부 채워져있다면 각 질문의 choice의 votes를 1씩 증가
-    choices = request.POST.getlist("choice")
-    print(len(question), len(choices))
-    if len(choices) < len(question):
-        return render(
-            request,
-            "poll/vote_form.html",
-            {
-                "error_msg": "설문이 완료되지 않았습니다.",
-                "question_list": question,
-            },
-        )
-    else:
-        for i in range(len(choices)):
-            choice = Choice.objects.get(pk=choices[i])
-            choice.votes += 1
-            choice.save()
-        return render(request, "poll/vote_finish.html")
+    # 모든 질문 조회
+    questions = Question.objects.all()
+    selected_choices = []
+
+    # 질문별로 선택된 값 확인
+    for question in questions:
+        choice_key = f"choice_{question.pk}"
+        choice_pk = request.POST.get(choice_key)
+
+        # 선택값이 없을 경우 에러 메시지와 함께 폼 반환
+        if not choice_pk:
+            return render(
+                request,
+                "poll/vote_form.html",
+                {
+                    "error_msg": "설문이 완료되지 않았습니다.",
+                    "question_list": questions,
+                },
+            )
+
+        # 선택된 choice 저장
+        selected_choices.append(choice_pk)
+
+    # 선택값 처리
+    for choice_pk in selected_choices:
+        choice = Choice.objects.get(pk=choice_pk)
+        choice.votes += 1
+        choice.save()
+
+    # 완료 페이지로 이동
+    return render(request, "poll/vote_finish.html")
 
 
 # 로그인한 관리자일 때 투표 결과보기

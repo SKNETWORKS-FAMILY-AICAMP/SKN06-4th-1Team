@@ -11,15 +11,13 @@
     <!--View에서 검증 실패시 Question을 다시 조회하기 위해서 넘겨주는 값. 
         화면에 보일 필요 없으므로 hidden type으로 설정 -->
     {% for question in question_list %}
-    <div class="container">
         <h2>{{question.pk}}. {{question.question_text}}</h2>
 
         <input type="hidden" name="question_id" value="{{question.pk}}">
         {% for choice in question.choice_set.all %}
-            <input type="radio" class='form-check-input' name="{{question.pk}}" value="{{choice.pk}}" id="{{choice.pk}}">
+            <input type="radio" class='form-check-input' name="choice_{{question.pk}}" value="{{choice.pk}}" id="{{choice.pk}}">
             <label for="{{choice.pk}}">{{choice.choice_text}}</label><br>
         {% endfor %}
-    </div>
     {% endfor %}
 
     <div class="mt-3">
