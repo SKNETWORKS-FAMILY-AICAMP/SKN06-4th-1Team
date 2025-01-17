@@ -30,6 +30,12 @@
         {% else %}
         <a href="{%url "account:login"%}" class="nav-link">로그인</a>
         {% endif %}
+
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="" class="nav-link">설문결과</a>
+        {% else %}
+        <a href="" class="nav-link">설문조사</a>
+        {% endif %}
       </div>
     </div>
   </nav>
