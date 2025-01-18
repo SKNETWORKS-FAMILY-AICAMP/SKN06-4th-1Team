@@ -9,11 +9,7 @@
             사진
         </th>
         <td>
-            {% if user.profile_img %}
-                <img src="{{user.profile_img.url}}" width="150px">
-            {% else %}
-                <img src="/static/account/image/default.jpg" width="150px" alt="동숲 주민 사진">
-            {% endif %}
+            <img src="{{user.profile_img.url}}" width="150px">
         </td>
     </tr>
     <tr>

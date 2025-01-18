@@ -2,5 +2,11 @@
 {% load static %}
 {% block title %}청년정책 챗봇{% endblock title %}
 {% block contents %}
-chat 기본 화면
+<div class="chat-container"></div>
+
+<div class="chat-input">
+    <input type="text" placeholder="메시지를 입력하세요." id="chat_input" />
+    <button id="send_btn">전송</button>
+</div>
+<script type="text/javascript" src="{% static '.js' %}"></script>
 {% endblock contents %}
