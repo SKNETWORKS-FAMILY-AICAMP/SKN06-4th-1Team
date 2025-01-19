@@ -107,6 +107,7 @@ class CustomUserChangeForm(UserChangeForm):
 
         widgets = {
             "birthday": forms.DateInput(attrs={"type": "date"}),
+            "profile_img": forms.FileInput(),
         }
 
     # 이름이 올바르게 입력되었는지 확인 (2자 이상)
