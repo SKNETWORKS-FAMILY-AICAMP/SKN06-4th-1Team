@@ -48,7 +48,11 @@
 ---
 
 # **요구사항 정의서** <br>
-- File_url: 
+- File_url: [요구사항_정의서](https://docs.google.com/spreadsheets/d/1O0Dzm-ltSoQMbXXITBngaq6UiDSfW-jQ2wDinS8H7MY/edit?usp=sharing)
+
+<br>
+  
+![요구사항_정의서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C.png)
 
 # **시스템 구성도** <br>
 ![System_Architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/Sys_Architecture.png)
@@ -70,6 +74,7 @@
 ---
 
 <br>
+
 > ## **poll**
 > - **poll_question** : 설문조사 질문 저장 테이블
 >   - **컬럼 정보** <br>
@@ -86,11 +91,11 @@
 >     - FOREIGN KEY : question_id에 대한 외래 키 제약 조건(poll_question 테이블 참조)
 
 # **화면 구성도** <br>
-- File_url: https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/Report/%ED%99%94%EB%A9%B4%EA%B5%AC%EC%84%B1%EB%8F%84.pdf
+- File_url: [화면 구성도.pdf](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/Report/%ED%99%94%EB%A9%B4%EA%B5%AC%EC%84%B1%EB%8F%84.pdf)
 
 
 # **테스트 계획 및 결과 보고서** <br>
-
+![테스트_결과_보고서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B3%84%ED%9A%8D%20%EB%B0%8F%20%EA%B2%B0%EA%B3%BC.png)
 
 ---
 
@@ -104,6 +109,6 @@
 > 
 > 정유진: 
 > 
-> 정지원: 
+> 정지원: 생각보다 시간이 많이 모자라네요..ㅠㅠ 특히 히스토리 관리가 어려웠습니다. 그래도 좋은 결과 나온 것 같아 좋습니다! 다들 고생하셨습니다.
 
 
