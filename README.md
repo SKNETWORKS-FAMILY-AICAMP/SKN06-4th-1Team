@@ -39,27 +39,27 @@
 
 > ## **account**
 > - **account_user** : 사용자의 정보 저장 테이블
-> - **컬럼 정보**
-> ![account_user]
-> - **제약조건**
->   - PRIMARY KEY : ID에 대한 기본 키 제약 조건
+>   - **컬럼 정보** <br>
+>   ![account_user](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/account_user.png)
+>   - **제약조건**
+>     - PRIMARY KEY : ID에 대한 기본 키 제약 조건
 
 <br>
 
 > ## **poll**
 > - **poll_question** : 설문조사 질문 저장 테이블
-> - **컬럼 정보**
-> ![poll_question]
-> - **제약조건**
->   - PRIMARY KEY : ID에 대한 기본 키 제약 조건
+>   - **컬럼 정보** <br>
+>   ![poll_question](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/poll_question.png)
+>   - **제약조건**
+>     - PRIMARY KEY : ID에 대한 기본 키 제약 조건
 >  <br>
 >
 > - **poll_choice**: 설문조사 응답 저장 테이블
-> - **컬럼 정보**
-> ![poll_choice]
-> - **제약조건**
->   - PRIMARY KEY : ID에 대한 기본 키 제약 조건
->   - FOREIGN KEY : question_id에 대한 외래 키 제약 조건(poll_question 테이블 참조)
+>   - **컬럼 정보** <br>
+>   ![poll_choice](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/poll_choice.png)
+>   - **제약조건**
+>     - PRIMARY KEY : ID에 대한 기본 키 제약 조건
+>     - FOREIGN KEY : question_id에 대한 외래 키 제약 조건(poll_question 테이블 참조)
 
 # **화면 구성도** <br>
 - File_url:
