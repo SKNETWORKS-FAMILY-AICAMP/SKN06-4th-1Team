@@ -32,12 +32,22 @@
 ---
 
 # **요구사항 정의서** <br>
-
-# **화면 구성도** <br>
+- File_url: 
 
 # **시스템 구성도** <br>
+![System_Architecture](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/IMG/Sys_Architecture.png)
+
+> ## **account**
+> - **account_user** : 사용자의 정보 저장 테이블
+> - **컬럼 정보**
+> 
+
+# **화면 구성도** <br>
+- File_url:
+
 
 # **테스트 계획 및 결과 보고서** <br>
+
 
 ---
 
