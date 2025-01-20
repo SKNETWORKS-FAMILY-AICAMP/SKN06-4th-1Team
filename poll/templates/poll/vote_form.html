@@ -18,7 +18,7 @@
             {% csrf_token %}
             {% for question in question_list %}
                 <div class="mb-2 d-flex flex-column align-items-start"> <!-- 질문 왼쪽 정렬 -->
-                    <h5 class="text-start">{{ question.pk }}. {{ question.question_text }}</h5> <!-- 글자 크기 줄임 -->
+                    <h6 class="text-start">{{ question.pk }}. {{ question.question_text }}</h6> <!-- 글자 크기 줄임 -->
                     <input type="hidden" name="question_id" value="{{ question.pk }}">
                     <div class="d-flex flex-wrap gap-3"> <!-- 답변을 가로 정렬 -->
                         {% for choice in question.choice_set.all %}
@@ -38,7 +38,7 @@
                 </div>
             {% endfor %}
             <div class="mt-3 text-center">
-                <button type="submit" class="btn btn-primary btn-sm">제출</button>
+                <button type="submit" class="btn btn-primary btn-sm " style="background-color: #00a059; color: white;">제출</button>
                 <button type="reset" class="btn btn-secondary btn-sm">선택 해제</button>
             </div>
         </form>
