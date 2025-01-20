@@ -3,25 +3,17 @@ html {
     margin: 0;
     padding: 0;
 }
-.navbar {
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: #007bff;
-    color: white;
-    padding: 20px 0;
-    top: 0;
-    width: 100%;
-}
+
 .chat-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    max-width: 70%;
+    max-width: 100%;
     margin: 10px auto;
     overflow-y: auto;
     height: calc(100vh - 250px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    
 }
 
 .message {
@@ -38,8 +30,8 @@ html {
 
 .right {
     align-self: flex-end; /* 플렉스 컨테이너 내의 아이템을 오른쪽으로 정렬 (교차축의 끝에 위치) */
-    background-color: #007bff;
-    color: white;
+    background-color: #f4f4f4;
+    color: black;
 }
 
 .chat-input {
@@ -49,7 +41,7 @@ html {
     transform: translateX(-50%);
     width: 70%; /* 요소의 너비를 뷰포트 너비의 70%로 설정 */
     padding: 10px; /* 요소의 내부 여백을 상하좌우 10px로 설정 */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 요소의 상단에 약간의 그림자를 추가하여 부드러운 입체감을 부여 */
+     /* 요소의 상단에 약간의 그림자를 추가하여 부드러운 입체감을 부여 */
     display: flex; /* 요소의 자식 요소들을 플렉스 컨테이너로 설정하여 유연한 배치 가능 */
     gap: 20px; /* 플렉스 컨테이너 내의 자식 요소들 사이에 20px의 간격을 설정 */
 }

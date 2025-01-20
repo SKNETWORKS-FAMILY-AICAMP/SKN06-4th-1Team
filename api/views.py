@@ -28,4 +28,4 @@ def chat_message(request, message):
 
     # JsonResponse(dict): HttpResponse 타입
     # dict를 JSON 응답으로 만들어서 응답
-    return JsonResponse({"response": response})
+    return JsonResponse({"response": response["output"]})
