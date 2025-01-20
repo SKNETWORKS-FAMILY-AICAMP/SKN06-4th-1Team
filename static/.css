@@ -10,10 +10,10 @@ html {
     gap: 10px;
     padding: 10px;
     max-width: 100%;
-    margin: 10px 100px 10px 100px;
+    margin: 10px auto;
     overflow-y: auto;
     height: calc(100vh - 250px);
-    overflow-x: hidden;
+    
 }
 
 .message {
@@ -70,4 +70,41 @@ html {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.chat-layout {
+    display: flex;
+}
+
+.chat-sidebar {
+    width: 250px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.chat-sidebar h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.chat-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chat-sidebar li {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-sidebar li:hover {
+    background: #e9ecef;
+}
+
+.chat-container {
+    flex-grow: 1;
+    padding: 20px;
 }
