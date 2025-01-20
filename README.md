@@ -62,7 +62,7 @@
 >     - FOREIGN KEY : question_id에 대한 외래 키 제약 조건(poll_question 테이블 참조)
 
 # **화면 구성도** <br>
-- File_url:
+- File_url: https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN06-4th-1Team/blob/main/Report/%ED%99%94%EB%A9%B4%EA%B5%AC%EC%84%B1%EB%8F%84.pdf
 
 
 # **테스트 계획 및 결과 보고서** <br>
