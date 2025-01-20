@@ -2,6 +2,9 @@
 > **SK Networks AI CAMP 6기 - 1Team** <br/> **개발기간: 2025.01.16 ~ 2025.01.20**
 ---
 
+# **notion** <br>
+- File_url: https://www.notion.so/4-17d05ad144e68029afebfa19d1bf73c5?pvs=4
+
 # **개발 팀** <br>
 ## <br> **팀명** <br>
 ![team_name](https://github.com/user-attachments/assets/c623e101-7db5-4e9e-8d26-b04ec270185f)
