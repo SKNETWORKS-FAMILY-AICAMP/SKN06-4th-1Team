@@ -24,6 +24,20 @@
 > - 청년 정책은 매우 방대하여 자신에게 맞는 정책을 찾기가 쉽지 않습니다. 정보가 산발적으로 흩어져 있어 존재하는지도 모르고 지나치는 정책들도 있으며, 본인이 지원 대상에 해당하는지 일일이 확인해야 하고 어떤 정책이 더 큰 혜택을 제공하는지 비교하는 것도 많은 시간과 노력이 필요합니다. 이러한 복잡성은 청년들이 정책을 적극적으로 활용하지 못하게 만드는 주요 원인 중 하나입니다.
 > - 이러한 상황에서 질문과 답변을 통해 맞춤형 청년 정책을 추천하는 RAG 기반 챗봇은 큰 도움이 됩니다. 이 챗봇은 사용자에게 적합한 정책들을 빠르고 정확하게 소개합니다. 이를 통해 청년들은 복잡한 정보 탐색 과정 없이 손쉽게 지원 가능한 정책을 확인하고, 더 많은 혜택을 누릴 수 있을 것입니다.
 
+## <br> **기술 스택** <br>
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/langchain-F7DF1E?style=for-the-badge&logo=langchain&logoColor=black">
+<img src="https://img.shields.io/badge/openai-0769AD?style=for-the-badge&logo=openai&logoColor=black">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://github.com/user-attachments/assets/c8cd01e7-6ce6-46db-8cc3-b13286829cf3" width="163" height="28"/>
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
+<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+<img src="https://github.com/user-attachments/assets/3538bfa4-e444-4e46-abf6-d7bdd3d8428c" width = "70", height="30"/>
+
 ## <br> **주요 기능** <br>
 > - **정책 추천**: 대화를 통해 사용자의 조건에 적합한 청년 정책들을 추천해 줍니다.
 > - **정확한 정보 제공**: 자체 데이터베이스를 통해 정확한 정보를 제공합니다.
