@@ -35,8 +35,6 @@
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
 <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
-<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
-<img src="https://github.com/user-attachments/assets/3538bfa4-e444-4e46-abf6-d7bdd3d8428c" width = "70", height="30"/>
 
 ## <br> **주요 기능** <br>
 > - **정책 추천**: 대화를 통해 사용자의 조건에 적합한 청년 정책들을 추천해 줍니다.
