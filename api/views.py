@@ -19,7 +19,7 @@ def chat_message(request, message):
     # LLM에 메시지 전송
     response = chat.send_message(message, history)
 
-    # History에 message, response를 저장(max_length가 넘으면 오래된 순으로 메세지 삭제제)
+    # History에 message, response를 저장(max_length가 넘으면 오래된 순으로 메세지 삭제)
     add_message_to_history(history, ("human", message))
     add_message_to_history(history, ("ai", response))
 

@@ -16,6 +16,7 @@ from operator import itemgetter
 from textwrap import dedent
 from pathlib import Path
 from dotenv import load_dotenv
+from .utils import *
 
 load_dotenv()
 
@@ -51,7 +52,7 @@ if os.path.exists(PERSIST_DIRECTORY):
         persist_directory=PERSIST_DIRECTORY,
         collection_name=COLLECTION_NAME,
         embedding_function=embedding_model,
-    )
+    ) 
 else:
     print(f"새로운 Vector Store를 {PERSIST_DIRECTORY}에 생성합니다.")
     os.makedirs(PERSIST_DIRECTORY, exist_ok=True)
@@ -187,40 +188,50 @@ class Chatting:
         Returns:
             str: AI의 응답 메시지
         """
+
         query = message.strip()
-        toolkit = [self.search_policy, self.search_web]
 
-        agent_executor = AgentExecutor(agent=self.agent, tools=toolkit, verbose=True)
-        context = "기본 context가 비어 있습니다. 적절한 데이터를 제공하세요."
-        history = []
+        if is_inappropriate_message(query):  # 비속어 감지
+            return {"output": "부적절한 메시지가 감지되었습니다. 다시 시도하세요."}
 
-        result_from_db = self.search_policy.invoke(query)
-        result_from_web = self.search_web.invoke(query)
-        print(result_from_db)
-        print(result_from_web)
-        combined_context = [
-            "저장된 데이터에서 찾은 정보:\n",
-            *[doc.page_content for doc in result_from_db],
-            "실시간 web 검색에서 확인된 정보:\n",
-        ]
-        if result_from_web:
-            combined_context.extend(
-                [
-                    f"[{idx}] {doc.metadata.get('title', '제목 없음')}: {doc.page_content}"
-                    for idx, doc in enumerate(result_from_web, start=1)
-                ]
+        try: 
+            toolkit = [self.search_policy, self.search_web]
+
+            agent_executor = AgentExecutor(agent=self.agent, tools=toolkit, verbose=True)
+            context = "기본 context가 비어 있습니다. 적절한 데이터를 제공하세요."
+            history = []
+
+            result_from_db = self.search_policy.invoke(query)
+            result_from_web = self.search_web.invoke(query)
+            print(result_from_db)
+            print(result_from_web)
+            combined_context = [
+                "저장된 데이터에서 찾은 정보:\n",
+                *[doc.page_content for doc in result_from_db],
+                "실시간 web 검색에서 확인된 정보:\n",
+            ]
+
+            if result_from_web:
+                combined_context.extend(
+                    [
+                        f"[{idx}] {doc.metadata.get('title', '제목 없음')}: {doc.page_content}"
+                        for idx, doc in enumerate(result_from_web, start=1)
+                    ]
+                )
+            else:
+                combined_context.append("web 검색 결과가 없습니다.")
+            response = agent_executor.invoke(
+                {
+                    "question": query,
+                    "context": combined_context,
+                    "history": history,
+                }
             )
-        else:
-            combined_context.append("web 검색 결과가 없습니다.")
-        response = agent_executor.invoke(
-            {
-                "question": query,
-                "context": combined_context,
-                "history": history,
-            }
-        )
 
-        return response
+            return response
+        
+        except Exception as e:
+            return f"오류 발생: {str(e)}"
 
 
 def add_message_to_history(
