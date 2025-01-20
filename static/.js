@@ -27,7 +27,7 @@ function sendMessage() {
 
             document.getElementById("chat_input").value = "";
         } else {
-            alert(Error code: ${xhr.status}, Error Msg: ${xhr.statusText});
+            alert(`Error code: ${xhr.status}, Error Msg: ${xhr.statusText}`);
         }
     };
     // 서버로 요청
