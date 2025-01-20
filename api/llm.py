@@ -249,4 +249,3 @@ def add_message_to_history(
     while len(history) >= max_history:
         history.pop(0)
     history.append(message)
-    

@@ -1,12 +1,22 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block title %}청년정책 챗봇{% endblock title %}
-{% block contents %}
-<div class="chat-container"></div>
 
-<div class="chat-input">
-    <input type="text" placeholder="메시지를 입력하세요." id="chat_input" />
-    <button id="send_btn">전송</button>
+{% block contents %}
+<div class="chat-layout">
+    <aside class="chat-sidebar">
+        <h1>지난 대화</h1>
+        <ul id="chat-history-list"></ul>
+    </aside>
+
+    <div class="chat-container">
+        <div id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="chat_input" placeholder="메시지를 입력하세요." />
+            <button id="send_btn">전송</button>
+        </div>
+    </div>
 </div>
+
 <script type="text/javascript" src="{% static '.js' %}"></script>
 {% endblock contents %}
